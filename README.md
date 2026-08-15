@@ -19,6 +19,19 @@ RoutePilot is a full-stack trip planner for property-carrying commercial drivers
 
 ---
 
+## Screenshots & Visual Walkthrough
+
+### 1. Trip Summary & Interactive Route Map
+![Trip Summary & Route Map](docs/Screenshot%202026-08-15%20230647.png)
+
+### 2. FMCSA Daily Log Sheet (Day 1) & Stepped SVG Grid
+![Day 1 Daily Log Sheet](docs/Screenshot%202026-08-15%20230705.png)
+
+### 3. FMCSA Daily Log Sheet (Day 2) & Duty Segment Details
+![Day 2 Daily Log Sheet & Remarks Detail](docs/Screenshot%202026-08-15%20230615.png)
+
+---
+
 ## 1. Tech Stack
 
 - **Backend**: Django 5.x, Django REST Framework, `django-cors-headers`, `requests`, `python-dotenv`, `gunicorn`, `whitenoise`.
