@@ -85,7 +85,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
   "current_location": "Dallas, TX",
   "pickup_location": "Houston, TX",
   "dropoff_location": "Atlanta, GA",
-  "current_cycle_used": 12.5
+  "current_cycle_used": 0
 }
 ```
 
@@ -93,36 +93,42 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ```json
 {
   "route": {
-    "geometry": [[32.7767, -96.7970], [29.7604, -95.3698], ...],
-    "total_distance_miles": 1021.9,
-    "total_driving_hours": 18.8,
+    "geometry": [
+      [32.7767, -96.7970],
+      [29.7589, -95.3676],
+      [30.3127, -89.6067],
+      [33.4286, -84.7211],
+      [33.7544, -84.3898]
+    ],
+    "total_distance_miles": 1032.1,
+    "total_driving_hours": 18.81,
     "stops": [
       {
         "type": "pickup",
-        "location": "Dallas, TX",
-        "lat": 32.7767,
-        "lon": -96.7970,
+        "location": "Houston, TX",
+        "lat": 29.7589382,
+        "lon": -95.3676974,
         "duration_hours": 1.0
       },
       {
         "type": "rest_10hr",
-        "location": "Jackson, MS",
-        "lat": 32.2988,
-        "lon": -90.1848,
+        "location": "10-hr rest @ approx mile 604",
+        "lat": 30.312786,
+        "lon": -89.60678,
         "duration_hours": 10.0
       },
       {
         "type": "fuel",
-        "location": "approx mile 1000",
-        "lat": 33.6401,
-        "lon": -84.4269,
+        "location": "Fuel stop @ approx mile 1000",
+        "lat": 33.428621,
+        "lon": -84.72117,
         "duration_hours": 0.5
       },
       {
         "type": "dropoff",
         "location": "Atlanta, GA",
-        "lat": 33.7490,
-        "lon": -84.3880,
+        "lat": 33.7544657,
+        "lon": -84.3898151,
         "duration_hours": 1.0
       }
     ]
@@ -132,19 +138,93 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
       "day": 1,
       "date_label": "Day 1",
       "segments": [
-        { "status": "on_duty_not_driving", "start_hour": 0.0, "end_hour": 1.0, "label": "Pickup" },
-        { "status": "driving", "start_hour": 1.0, "end_hour": 9.0, "label": "Driving" },
-        { "status": "on_duty_not_driving", "start_hour": 9.0, "end_hour": 9.5, "label": "30-min Break" },
-        { "status": "driving", "start_hour": 9.5, "end_hour": 14.0, "label": "Driving" },
-        { "status": "off_duty", "start_hour": 14.0, "end_hour": 24.0, "label": "10-hr Rest" }
+        {
+          "status": "on_duty_not_driving",
+          "start_hour": 0.0,
+          "end_hour": 1.0,
+          "label": "Pickup"
+        },
+        {
+          "status": "driving",
+          "start_hour": 1.0,
+          "end_hour": 9.0,
+          "label": "Driving"
+        },
+        {
+          "status": "on_duty_not_driving",
+          "start_hour": 9.0,
+          "end_hour": 9.5,
+          "label": "30-min Break"
+        },
+        {
+          "status": "driving",
+          "start_hour": 9.5,
+          "end_hour": 12.5,
+          "label": "Driving"
+        },
+        {
+          "status": "off_duty",
+          "start_hour": 12.5,
+          "end_hour": 22.5,
+          "label": "10-hr Rest"
+        },
+        {
+          "status": "driving",
+          "start_hour": 22.5,
+          "end_hour": 24.0,
+          "label": "Driving"
+        }
       ],
       "totals": {
         "off_duty": 10.0,
         "sleeper_berth": 0.0,
-        "driving": 13.5,
+        "driving": 12.5,
         "on_duty_not_driving": 1.5
       },
-      "digital_total": 15.0
+      "digital_total": 14.0
+    },
+    {
+      "day": 2,
+      "date_label": "Day 2",
+      "segments": [
+        {
+          "status": "driving",
+          "start_hour": 0.0,
+          "end_hour": 5.725,
+          "label": "Driving"
+        },
+        {
+          "status": "on_duty_not_driving",
+          "start_hour": 5.725,
+          "end_hour": 6.225,
+          "label": "Fuel Stop"
+        },
+        {
+          "status": "driving",
+          "start_hour": 6.225,
+          "end_hour": 6.81,
+          "label": "Driving"
+        },
+        {
+          "status": "on_duty_not_driving",
+          "start_hour": 6.81,
+          "end_hour": 7.81,
+          "label": "Dropoff"
+        },
+        {
+          "status": "off_duty",
+          "start_hour": 7.81,
+          "end_hour": 24.0,
+          "label": "Off Duty"
+        }
+      ],
+      "totals": {
+        "off_duty": 16.19,
+        "sleeper_berth": 0.0,
+        "driving": 6.31,
+        "on_duty_not_driving": 1.5
+      },
+      "digital_total": 7.81
     }
   ],
   "warnings": []
