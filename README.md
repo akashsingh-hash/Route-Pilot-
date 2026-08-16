@@ -249,5 +249,15 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## 5. Live Demo
 
-- **Backend API**: `https://<your-render-app>.onrender.com`
-- **Frontend Web App**: `https://<your-vercel-app>.vercel.app`
+- **Frontend Web App**: [https://route-pilot-delta.vercel.app](https://route-pilot-delta.vercel.app)
+- **Backend API**: [https://route-pilot.onrender.com](https://route-pilot.onrender.com)
+
+---
+
+## 6. Known Limitations
+
+- Uses OSRM's public demo routing server (not production-grade infrastructure).
+- Marker/event positions along the route are interpolated using approximate Euclidean distance, not exact geodesic distance.
+- Sleeper berth splitting is not exercised under the default single-driver assumptions in this MVP.
+- Date field shows relative day number (Day 1, Day 2) rather than real calendar dates, since trip start date isn't currently collected.
+

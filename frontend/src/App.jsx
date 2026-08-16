@@ -16,6 +16,9 @@ export default function App() {
 
   const handleError = (errMsg) => {
     setError(errMsg);
+    if (errMsg) {
+      setTripResult(null); // Reset previous trip result so stale results do not persist on error
+    }
   };
 
   return (
@@ -56,13 +59,16 @@ export default function App() {
 
         {/* Error Banner */}
         {error && (
-          <section className="bg-red-950/90 border border-red-800 text-red-200 p-4 rounded-xl shadow-lg flex items-start space-x-3 animate-fade-in">
+          <section className="bg-red-950/90 border border-red-800 text-red-200 p-4 sm:p-5 rounded-xl shadow-lg flex items-start space-x-3.5 animate-fade-in">
             <svg className="w-6 h-6 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <div className="flex-1 text-sm">
-              <h4 className="font-semibold text-red-100">Trip Planning Error</h4>
-              <p className="mt-1 text-red-300">{error}</p>
+            <div className="flex-1 text-sm space-y-1">
+              <h4 className="font-semibold text-red-100 text-base">Trip Planning Error</h4>
+              <p className="text-red-200 font-medium">{error}</p>
+              <p className="text-xs text-red-300/80 pt-1 border-t border-red-900/60">
+                💡 <span className="font-semibold">Tip:</span> Ensure location names are valid cities or addresses (e.g., <code className="bg-red-900/60 px-1 py-0.5 rounded font-mono text-red-200">Dallas, TX</code>, <code className="bg-red-900/60 px-1 py-0.5 rounded font-mono text-red-200">Houston, TX</code>) and that your backend server is active.
+              </p>
             </div>
           </section>
         )}
@@ -86,7 +92,7 @@ export default function App() {
             <RouteMap route={tripResult.route} />
 
             {/* Daily Log Sheets */}
-            <LogSheetList dailyLogs={tripResult.daily_logs} />
+            <LogSheetList dailyLogs={tripResult.daily_logs} routeInfo={tripResult.route} />
           </section>
         )}
       </main>

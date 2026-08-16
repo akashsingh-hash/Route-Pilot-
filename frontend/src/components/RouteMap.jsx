@@ -151,7 +151,7 @@ export default function RouteMap({ route }) {
         </div>
       </div>
 
-      <div className="h-[450px] sm:h-[500px] w-full relative z-0">
+      <div className="h-[360px] sm:h-[450px] lg:h-[500px] w-full relative z-0">
         <MapContainer
           center={initialCenter}
           zoom={6}

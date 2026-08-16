@@ -5,7 +5,7 @@ import LogSheet from './LogSheet';
  * LogSheetList.jsx — Container for multiple daily log sheets.
  * Renders tabbed navigation to switch between days or view all stacked.
  */
-export default function LogSheetList({ dailyLogs = [] }) {
+export default function LogSheetList({ dailyLogs = [], routeInfo = {} }) {
   const [activeTab, setActiveTab] = useState('all'); // 'all' or day number
 
   if (!dailyLogs || dailyLogs.length === 0) {
@@ -68,7 +68,7 @@ export default function LogSheetList({ dailyLogs = [] }) {
       {/* Rendered Log Sheets */}
       <div className="space-y-6">
         {logsToRender.map((log) => (
-          <LogSheet key={log.day} log={log} />
+          <LogSheet key={log.day} log={log} routeInfo={routeInfo} />
         ))}
       </div>
     </div>
