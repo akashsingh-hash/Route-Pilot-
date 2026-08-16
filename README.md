@@ -1,6 +1,6 @@
 # RoutePilot — HOS & Trip Planner
 
-RoutePilot is a full-stack trip planner for property-carrying commercial drivers that calculates HOS-compliant routes, interleave mandatory rest breaks & fuel stops, and generates official FMCSA Driver's Daily Log Sheets.
+RoutePilot is a full-stack trip planner for property-carrying commercial drivers that calculates HOS-compliant routes, interleaves mandatory rest breaks & fuel stops, and generates FMCSA-style Driver's Daily Log Sheets.
 
 ---
 
