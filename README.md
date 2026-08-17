@@ -251,6 +251,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 - **Frontend Web App**: [https://route-pilot-delta.vercel.app](https://route-pilot-delta.vercel.app)
 - **Backend API**: [https://route-pilot.onrender.com](https://route-pilot.onrender.com)
+- **Loom Walkthrough**: [https://www.loom.com/share/0c80e50f24334471b1a9ee269c94779a](https://www.loom.com/share/0c80e50f24334471b1a9ee269c94779a)
 
 ---
 
